@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.3 on win32)" generated="20201114 01:16:24.353" rpa="false">
+<suite id="s1" name="Twitch" source="C:\Users\brian\robot-scripts\TestTwitch\Tests\Twitch.robot">
+<test id="s1-t1" name="Verify that the Twitch platform can play the author's video">
+<kw name="Given the user use phone to open the browser" library="TwitchPhoneWeb">
+<doc>Use selenium webdriver mobile Emulation</doc>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>deviceName=${DEVICE_NAME}</arg>
+</arguments>
+<assign>
+<var>${DICT_MobileEmulation}</var>
+</assign>
+<msg timestamp="20201114 01:16:24.615" level="INFO">${DICT_MobileEmulation} = {'deviceName': 'Pixel 2 XL'}</msg>
+<status status="PASS" starttime="20201114 01:16:24.614" endtime="20201114 01:16:24.615"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+</arguments>
+<assign>
+<var>${EVALUATE_ChromeOptions}</var>
+</assign>
+<msg timestamp="20201114 01:16:24.615" level="INFO">${EVALUATE_ChromeOptions} = &lt;selenium.webdriver.chrome.options.Options object at 0x03B37130&gt;</msg>
+<status status="PASS" starttime="20201114 01:16:24.615" endtime="20201114 01:16:24.615"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${EVALUATE_ChromeOptions}</arg>
+<arg>add_experimental_option</arg>
+<arg>mobileEmulation</arg>
+<arg>${DICT_MobileEmulation}</arg>
+</arguments>
+<status status="PASS" starttime="20201114 01:16:24.615" endtime="20201114 01:16:24.615"></status>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>chrome_options=${EVALUATE_ChromeOptions}</arg>
+</arguments>
+<msg timestamp="20201114 01:16:24.616" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20201114 01:16:24.616" endtime="20201114 01:16:27.914"></status>
+</kw>
+<status status="PASS" starttime="20201114 01:16:24.614" endtime="20201114 01:16:27.915"></status>
+</kw>
+<kw name="Given the user go to twitch home page" library="TwitchPhoneWeb">
+<kw name="Loading Page" library="HomePageMain">
+<tags>
+<tag>Action</tag>
+</tags>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${LANDINGPAGE_NAVIGATE_SITE}</arg>
+</arguments>
+<msg timestamp="20201114 01:16:27.919" level="INFO">Opening url 'https://www.twitch.tv/'</msg>
+<status status="PASS" starttime="20201114 01:16:27.919" endtime="20201114 01:16:30.768"></status>
+</kw>
+<status status="PASS" starttime="20201114 01:16:27.917" endtime="20201114 01:16:30.768"></status>
+</kw>
+<kw name="Verify Page Loaded" library="HomePageMain">
+<tags>
+<tag>Verify</tag>
+</tags>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${LandingPage_HomeElement}</arg>
+</arguments>
+<status status="PASS" starttime="20201114 01:16:30.768" endtime="20201114 01:16:30.794"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${LandingPage_HomeElement}</arg>
+</arguments>
+<msg timestamp="20201114 01:16:30.801" level="INFO">Current page contains element 'css=h1.tw-c-text-base'.</msg>
+<status status="PASS" starttime="20201114 01:16:30.794" endtime="20201114 01:16:30.801"></status>
+</kw>
+<status status="PASS" starttime="20201114 01:16:30.768" endtime="20201114 01:16:30.801"></status>
+</kw>
+<status status="PASS" starttime="20201114 01:16:27.916" endtime="20201114 01:16:30.801"></status>
+</kw>
+<kw name="When the user type &quot;Monster Hunter World&quot; from the search bar" library="TwitchPhoneWeb">
+<kw name="Verify Search Button" library="HomePageNav">
+<tags>
+<tag>Verify</tag>
+</tags>
+<kw name="Page Should Contain Button" library="SeleniumLibrary">
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<arguments>
+<arg>${HomePageNav_SearchButton_ExpandBar}</arg>
+</arguments>
+<msg timestamp="20201114 01:16:30.904" level="INFO">Current page contains button 'css=.tw-pd-l-0 button'.</msg>
+<status status="PASS" starttime="20201114 01:16:30.803" endtime="20201114 01:16:30.904"></status>
+</kw>
+<status status="PASS" starttime="20201114 01:16:30.802" endtime="20201114 01:16:30.904"></status>
+</kw>
+<kw name="Click Search Button Show SearchBar" library="HomePageNav">
+<tags>
+<tag>Active</tag>
+</tags>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${HomePageNav_SearchButton_ExpandBar}</arg>
+</arguments>
+<msg timestamp="20201114 01:16:30.904" level="INFO">Clicking button 'css=.tw-pd-l-0 button'.</msg>
+<status status="PASS" starttime="20201114 01:16:30.904" endtime="20201114 01:16:31.083"></status>
+</kw>
+<status status="PASS" starttime="20201114 01:16:30.904" endtime="20201114 01:16:31.083"></status>
+</kw>
+<kw name="Verify Search Bar" library="HomePageNav">
+<tags>
+<tag>Verify</tag>
+</tags>
+<kw name="Page Should Contain Textfield" library="SeleniumLibrary">
+<doc>Verifies text field ``locator`` is found from current page.</doc>
+<arguments>
+<arg>${HomePageNav_SearchBar}</arg>
+</arguments>
+<msg timestamp="20201114 01:16:31.234" level="INFO">Current page contains text field 'css=input.tw-input'.</msg>
+<status status="PASS" starttime="20201114 01:16:31.084" endtime="20201114 01:16:31.234"></status>
+</kw>
+<status status="PASS" starttime="20201114 01:16:31.083" endtime="20201114 01:16:31.235"></status>
+</kw>
+<kw name="Type Text To SearchBar" library="HomePageNav">
+<tags>
+<tag>Active</tag>
+</tags>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${HomePageNav_SearchBar}</arg>
+<arg>${HOMEPAGENAV_SEARCHTEXT}</arg>
+</arguments>
+<msg timestamp="20201114 01:16:31.237" level="INFO">Typing text 'Monster Hunter World' into text field 'css=input.tw-input'.</msg>
+<status status="PASS" starttime="20201114 01:16:31.236" endtime="20201114 01:16:31.470"></status>
+</kw>
+<status status="PASS" starttime="20201114 01:16:31.235" endtime="20201114 01:16:31.470"></status>
+</kw>
+<status status="PASS" starttime="20201114 01:16:30.802" endtime="20201114 01:16:31.470"></status>
+</kw>
+<kw name="And press the search button" library="TwitchPhoneWeb">
+<kw name="Click Search Button Show SearchResult" library="HomePageNav">
+<tags>
+<tag>Active</tag>
+</tags>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${HomePageNav_SearchButton_Next}</arg>
+</arguments>
+<msg timestamp="20201114 01:16:31.472" level="INFO">Clicking button 'css=.tw-pd-l-1 button'.</msg>
+<status status="PASS" starttime="20201114 01:16:31.472" endtime="20201114 01:16:31.574"></status>
+</kw>
+<status status="PASS" starttime="20201114 01:16:31.471" endtime="20201114 01:16:31.575"></status>
+</kw>
+<status status="PASS" starttime="20201114 01:16:31.471" endtime="20201114 01:16:31.575"></status>
+</kw>
+<kw name="And find the first film from the resulting film by &quot;CervelloneRe&quot;" library="TwitchPhoneWeb">
+<kw name="Wait Page Contains Elment of Region About Vedio" library="SearchResultMain">
+<tags>
+<tag>Wait</tag>
+</tags>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${SearchResultMain_RegionAboutVedio}</arg>
+</arguments>
+<status status="PASS" starttime="20201114 01:16:31.576" endtime="20201114 01:16:34.093"></status>
+</kw>
+<status status="PASS" starttime="20201114 01:16:31.576" endtime="20201114 01:16:34.093"></status>
+</kw>
+<kw name="Click Vedio Details Link" library="SearchResultMain">
+<tags>
+<tag>Action</tag>
+</tags>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${SearchResultMain_VedioDetailsLink}</arg>
+</arguments>
+<msg timestamp="20201114 01:16:34.095" level="INFO">Clicking link 'css=.tw-pd-t-1:nth-child(3) [href*=category\=vods]'.</msg>
+<status status="PASS" starttime="20201114 01:16:34.095" endtime="20201114 01:16:34.251"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<arguments>
+<arg>${OUTPUTDIR}/RegionAboutVedio.png</arg>
+</arguments>
+<msg timestamp="20201114 01:16:35.117" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="RegionAboutVedio.png"&gt;&lt;img src="RegionAboutVedio.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201114 01:16:34.251" endtime="20201114 01:16:35.118"></status>
+</kw>
+<status status="PASS" starttime="20201114 01:16:34.095" endtime="20201114 01:16:35.118"></status>
+</kw>
+<kw name="Wait Page Contains Elment of Region About Vedio" library="VedioListMain">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${VedioListMain_ResultViews}</arg>
+</arguments>
+<status status="PASS" starttime="20201114 01:16:35.119" endtime="20201114 01:16:35.143"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<arguments>
+<arg>${OUTPUTDIR}/RegionAboutVedio.png</arg>
+</arguments>
+<msg timestamp="20201114 01:16:36.044" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="RegionAboutVedio.png"&gt;&lt;img src="RegionAboutVedio.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201114 01:16:35.143" endtime="20201114 01:16:36.044"></status>
+</kw>
+<status status="PASS" starttime="20201114 01:16:35.118" endtime="20201114 01:16:36.045"></status>
+</kw>
+<kw name="Scroll Element Into View test" library="VedioListMain">
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${VedioListMain_InteracTable_last}</arg>
+</arguments>
+<status status="PASS" starttime="20201114 01:16:36.045" endtime="20201114 01:16:36.368"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${VedioListMain_InteracTable_last}</arg>
+</arguments>
+<status status="PASS" starttime="20201114 01:16:36.368" endtime="20201114 01:16:36.387"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${VedioListMain_ResultViews}</arg>
+</arguments>
+<assign>
+<var>${Resultlist_count}</var>
+</assign>
+<msg timestamp="20201114 01:16:36.394" level="INFO">${Resultlist_count} = 12</msg>
+<status status="PASS" starttime="20201114 01:16:36.387" endtime="20201114 01:16:36.394"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${Resultlist_count}</arg>
+</arguments>
+<msg timestamp="20201114 01:16:36.394" level="INFO">12</msg>
+<status status="PASS" starttime="20201114 01:16:36.394" endtime="20201114 01:16:36.394"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<arguments>
+<arg>${OUTPUTDIR}/ScrollElementIntoView.png</arg>
+</arguments>
+<msg timestamp="20201114 01:16:37.341" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="ScrollElementIntoView.png"&gt;&lt;img src="ScrollElementIntoView.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201114 01:16:36.395" endtime="20201114 01:16:37.341"></status>
+</kw>
+<status status="PASS" starttime="20201114 01:16:36.045" endtime="20201114 01:16:37.341"></status>
+</kw>
+<status status="PASS" starttime="20201114 01:16:31.575" endtime="20201114 01:16:37.341"></status>
+</kw>
+<kw name="End Test" library="TwitchPhoneWeb" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201114 01:16:37.343" endtime="20201114 01:16:39.506"></status>
+</kw>
+<status status="PASS" starttime="20201114 01:16:37.342" endtime="20201114 01:16:39.507"></status>
+</kw>
+<doc>As a mobile phone user. Users preview Twitch with a browser. Users can enter text from the search box, and then look for the author's video from the resulting past video.</doc>
+<tags>
+<tag>Major</tag>
+</tags>
+<status status="PASS" starttime="20201114 01:16:24.612" endtime="20201114 01:16:39.509" critical="yes"></status>
+</test>
+<doc>This is some basic info about the whole suite</doc>
+<status status="PASS" starttime="20201114 01:16:24.355" endtime="20201114 01:16:39.522"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">Major</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Twitch">Twitch</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
