@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.2 (Python 3.8.3 on win32)" generated="20201116 12:28:13.037" rpa="false">
+<robot generator="Robot 3.2.2 (Python 3.8.3 on win32)" generated="20201117 01:01:02.543" rpa="false">
 <suite id="s1" name="Twitch" source="C:\Users\brian\robot-scripts\RobotTestCase-Twitch\Tests\Twitch.robot">
 <test id="s1-t1" name="Verify that the Twitch platform can play the author's video">
 <kw name="Given the user use phone to open the browser" library="TwitchPhoneWeb">
@@ -12,8 +12,8 @@
 <assign>
 <var>${DICT_MobileEmulation}</var>
 </assign>
-<msg timestamp="20201116 12:28:13.323" level="INFO">${DICT_MobileEmulation} = {'deviceName': 'Pixel 2 XL'}</msg>
-<status status="PASS" starttime="20201116 12:28:13.323" endtime="20201116 12:28:13.323"></status>
+<msg timestamp="20201117 01:01:02.796" level="INFO">${DICT_MobileEmulation} = {'deviceName': 'Pixel 2 XL'}</msg>
+<status status="PASS" starttime="20201117 01:01:02.796" endtime="20201117 01:01:02.796"></status>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <doc>Evaluates the given expression in Python and returns the result.</doc>
@@ -24,8 +24,8 @@
 <assign>
 <var>${EVALUATE_ChromeOptions}</var>
 </assign>
-<msg timestamp="20201116 12:28:13.324" level="INFO">${EVALUATE_ChromeOptions} = &lt;selenium.webdriver.chrome.options.Options object at 0x0462D280&gt;</msg>
-<status status="PASS" starttime="20201116 12:28:13.323" endtime="20201116 12:28:13.324"></status>
+<msg timestamp="20201117 01:01:02.797" level="INFO">${EVALUATE_ChromeOptions} = &lt;selenium.webdriver.chrome.options.Options object at 0x039EB1A8&gt;</msg>
+<status status="PASS" starttime="20201117 01:01:02.796" endtime="20201117 01:01:02.797"></status>
 </kw>
 <kw name="Call Method" library="BuiltIn">
 <doc>Calls the named method of the given object with the provided arguments.</doc>
@@ -35,7 +35,7 @@
 <arg>mobileEmulation</arg>
 <arg>${DICT_MobileEmulation}</arg>
 </arguments>
-<status status="PASS" starttime="20201116 12:28:13.324" endtime="20201116 12:28:13.324"></status>
+<status status="PASS" starttime="20201117 01:01:02.797" endtime="20201117 01:01:02.797"></status>
 </kw>
 <kw name="Create Webdriver" library="SeleniumLibrary">
 <doc>Creates an instance of Selenium WebDriver.</doc>
@@ -43,10 +43,10 @@
 <arg>Chrome</arg>
 <arg>chrome_options=${EVALUATE_ChromeOptions}</arg>
 </arguments>
-<msg timestamp="20201116 12:28:13.325" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<status status="PASS" starttime="20201116 12:28:13.324" endtime="20201116 12:28:16.612"></status>
+<msg timestamp="20201117 01:01:02.798" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20201117 01:01:02.797" endtime="20201117 01:01:06.093"></status>
 </kw>
-<status status="PASS" starttime="20201116 12:28:13.322" endtime="20201116 12:28:16.612"></status>
+<status status="PASS" starttime="20201117 01:01:02.795" endtime="20201117 01:01:06.093"></status>
 </kw>
 <kw name="Given the user go to twitch home page" library="TwitchPhoneWeb">
 <kw name="Loading Page" library="HomePageMain">
@@ -58,10 +58,10 @@
 <arguments>
 <arg>${LANDINGPAGE_NAVIGATE_SITE}</arg>
 </arguments>
-<msg timestamp="20201116 12:28:16.614" level="INFO">Opening url 'https://www.twitch.tv/'</msg>
-<status status="PASS" starttime="20201116 12:28:16.614" endtime="20201116 12:28:19.215"></status>
+<msg timestamp="20201117 01:01:06.096" level="INFO">Opening url 'https://www.twitch.tv/'</msg>
+<status status="PASS" starttime="20201117 01:01:06.096" endtime="20201117 01:01:09.438"></status>
 </kw>
-<status status="PASS" starttime="20201116 12:28:16.613" endtime="20201116 12:28:19.215"></status>
+<status status="PASS" starttime="20201117 01:01:06.095" endtime="20201117 01:01:09.438"></status>
 </kw>
 <kw name="Verify Page Loaded" library="HomePageMain">
 <tags>
@@ -72,19 +72,19 @@
 <arguments>
 <arg>${LandingPage_HomeElement}</arg>
 </arguments>
-<status status="PASS" starttime="20201116 12:28:19.215" endtime="20201116 12:28:19.242"></status>
+<status status="PASS" starttime="20201117 01:01:09.439" endtime="20201117 01:01:09.464"></status>
 </kw>
 <kw name="Page Should Contain Element" library="SeleniumLibrary">
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
 <arguments>
 <arg>${LandingPage_HomeElement}</arg>
 </arguments>
-<msg timestamp="20201116 12:28:19.250" level="INFO">Current page contains element 'css=h1.tw-c-text-base'.</msg>
-<status status="PASS" starttime="20201116 12:28:19.242" endtime="20201116 12:28:19.250"></status>
+<msg timestamp="20201117 01:01:09.472" level="INFO">Current page contains element 'css=h1.tw-c-text-base'.</msg>
+<status status="PASS" starttime="20201117 01:01:09.464" endtime="20201117 01:01:09.472"></status>
 </kw>
-<status status="PASS" starttime="20201116 12:28:19.215" endtime="20201116 12:28:19.250"></status>
+<status status="PASS" starttime="20201117 01:01:09.439" endtime="20201117 01:01:09.473"></status>
 </kw>
-<status status="PASS" starttime="20201116 12:28:16.613" endtime="20201116 12:28:19.250"></status>
+<status status="PASS" starttime="20201117 01:01:06.094" endtime="20201117 01:01:09.473"></status>
 </kw>
 <kw name="When the user type &quot;Monster Hunter World&quot; from the search bar" library="TwitchPhoneWeb">
 <kw name="Verify Search Button" library="HomePageNav">
@@ -96,10 +96,10 @@
 <arguments>
 <arg>${HomePageNav_SearchButton_ExpandBar}</arg>
 </arguments>
-<msg timestamp="20201116 12:28:19.371" level="INFO">Current page contains button 'css=.tw-pd-l-0 button'.</msg>
-<status status="PASS" starttime="20201116 12:28:19.252" endtime="20201116 12:28:19.371"></status>
+<msg timestamp="20201117 01:01:09.571" level="INFO">Current page contains button 'css=.tw-pd-l-0 button'.</msg>
+<status status="PASS" starttime="20201117 01:01:09.474" endtime="20201117 01:01:09.571"></status>
 </kw>
-<status status="PASS" starttime="20201116 12:28:19.251" endtime="20201116 12:28:19.371"></status>
+<status status="PASS" starttime="20201117 01:01:09.474" endtime="20201117 01:01:09.571"></status>
 </kw>
 <kw name="Click Search Button Show SearchBar" library="HomePageNav">
 <tags>
@@ -110,10 +110,10 @@
 <arguments>
 <arg>${HomePageNav_SearchButton_ExpandBar}</arg>
 </arguments>
-<msg timestamp="20201116 12:28:19.372" level="INFO">Clicking button 'css=.tw-pd-l-0 button'.</msg>
-<status status="PASS" starttime="20201116 12:28:19.372" endtime="20201116 12:28:19.517"></status>
+<msg timestamp="20201117 01:01:09.572" level="INFO">Clicking button 'css=.tw-pd-l-0 button'.</msg>
+<status status="PASS" starttime="20201117 01:01:09.572" endtime="20201117 01:01:09.700"></status>
 </kw>
-<status status="PASS" starttime="20201116 12:28:19.371" endtime="20201116 12:28:19.518"></status>
+<status status="PASS" starttime="20201117 01:01:09.571" endtime="20201117 01:01:09.700"></status>
 </kw>
 <kw name="Verify Search Bar" library="HomePageNav">
 <tags>
@@ -124,10 +124,10 @@
 <arguments>
 <arg>${HomePageNav_SearchBar}</arg>
 </arguments>
-<msg timestamp="20201116 12:28:19.545" level="INFO">Current page contains text field 'css=input.tw-input'.</msg>
-<status status="PASS" starttime="20201116 12:28:19.518" endtime="20201116 12:28:19.545"></status>
+<msg timestamp="20201117 01:01:09.729" level="INFO">Current page contains text field 'css=input.tw-input'.</msg>
+<status status="PASS" starttime="20201117 01:01:09.702" endtime="20201117 01:01:09.729"></status>
 </kw>
-<status status="PASS" starttime="20201116 12:28:19.518" endtime="20201116 12:28:19.546"></status>
+<status status="PASS" starttime="20201117 01:01:09.701" endtime="20201117 01:01:09.729"></status>
 </kw>
 <kw name="Type Text To SearchBar" library="HomePageNav">
 <tags>
@@ -139,12 +139,12 @@
 <arg>${HomePageNav_SearchBar}</arg>
 <arg>${HOMEPAGENAV_SEARCHTEXT}</arg>
 </arguments>
-<msg timestamp="20201116 12:28:19.547" level="INFO">Typing text 'Monster Hunter World' into text field 'css=input.tw-input'.</msg>
-<status status="PASS" starttime="20201116 12:28:19.546" endtime="20201116 12:28:19.840"></status>
+<msg timestamp="20201117 01:01:09.730" level="INFO">Typing text 'Monster Hunter World' into text field 'css=input.tw-input'.</msg>
+<status status="PASS" starttime="20201117 01:01:09.729" endtime="20201117 01:01:09.900"></status>
 </kw>
-<status status="PASS" starttime="20201116 12:28:19.546" endtime="20201116 12:28:19.840"></status>
+<status status="PASS" starttime="20201117 01:01:09.729" endtime="20201117 01:01:09.901"></status>
 </kw>
-<status status="PASS" starttime="20201116 12:28:19.251" endtime="20201116 12:28:19.841"></status>
+<status status="PASS" starttime="20201117 01:01:09.474" endtime="20201117 01:01:09.901"></status>
 </kw>
 <kw name="And press the search button" library="TwitchPhoneWeb">
 <kw name="Click Search Button Show SearchResult" library="HomePageNav">
@@ -156,12 +156,12 @@
 <arguments>
 <arg>${HomePageNav_SearchButton_Next}</arg>
 </arguments>
-<msg timestamp="20201116 12:28:19.846" level="INFO">Clicking button 'css=.tw-pd-l-1 button'.</msg>
-<status status="PASS" starttime="20201116 12:28:19.846" endtime="20201116 12:28:19.955"></status>
+<msg timestamp="20201117 01:01:09.904" level="INFO">Clicking button 'css=.tw-pd-l-1 button'.</msg>
+<status status="PASS" starttime="20201117 01:01:09.903" endtime="20201117 01:01:10.024"></status>
 </kw>
-<status status="PASS" starttime="20201116 12:28:19.845" endtime="20201116 12:28:19.955"></status>
+<status status="PASS" starttime="20201117 01:01:09.903" endtime="20201117 01:01:10.025"></status>
 </kw>
-<status status="PASS" starttime="20201116 12:28:19.844" endtime="20201116 12:28:19.955"></status>
+<status status="PASS" starttime="20201117 01:01:09.902" endtime="20201117 01:01:10.025"></status>
 </kw>
 <kw name="And check My Target Creator or scroll three list And go to movie" library="TwitchPhoneWeb">
 <kw name="Wait Page Contains Elment of Region About Vedio" library="SearchResultMain">
@@ -174,9 +174,9 @@
 <arg>${SearchResultMain_RegionAboutVedio}</arg>
 <arg>5s</arg>
 </arguments>
-<status status="PASS" starttime="20201116 12:28:19.957" endtime="20201116 12:28:21.168"></status>
+<status status="PASS" starttime="20201117 01:01:10.026" endtime="20201117 01:01:11.323"></status>
 </kw>
-<status status="PASS" starttime="20201116 12:28:19.956" endtime="20201116 12:28:21.168"></status>
+<status status="PASS" starttime="20201117 01:01:10.026" endtime="20201117 01:01:11.323"></status>
 </kw>
 <kw name="Click Vedio Details Link" library="SearchResultMain">
 <tags>
@@ -187,23 +187,29 @@
 <arguments>
 <arg>${SearchResultMain_VedioDetailsLink}</arg>
 </arguments>
-<msg timestamp="20201116 12:28:21.169" level="INFO">Clicking link 'css=.tw-pd-t-1:nth-child(3) [href*=category\=vods]'.</msg>
-<status status="PASS" starttime="20201116 12:28:21.169" endtime="20201116 12:28:21.303"></status>
+<msg timestamp="20201117 01:01:11.324" level="INFO">Clicking link 'css=.tw-pd-t-1:nth-child(3) [href*=category\=vods]'.</msg>
+<status status="PASS" starttime="20201117 01:01:11.324" endtime="20201117 01:01:11.450"></status>
 </kw>
-<status status="PASS" starttime="20201116 12:28:21.169" endtime="20201116 12:28:21.303"></status>
+<status status="PASS" starttime="20201117 01:01:11.323" endtime="20201117 01:01:11.451"></status>
 </kw>
 <kw name="Wait Page Contains Elment of Result Views" library="VedioListMain">
+<tags>
+<tag>Wait</tag>
+</tags>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
 <arguments>
 <arg>${VedioListMain_BackResultLink}</arg>
 <arg>5s</arg>
 </arguments>
-<status status="PASS" starttime="20201116 12:28:21.304" endtime="20201116 12:28:21.976"></status>
+<status status="PASS" starttime="20201117 01:01:11.451" endtime="20201117 01:01:11.913"></status>
 </kw>
-<status status="PASS" starttime="20201116 12:28:21.303" endtime="20201116 12:28:21.976"></status>
+<status status="PASS" starttime="20201117 01:01:11.451" endtime="20201117 01:01:11.913"></status>
 </kw>
 <kw name="Check First Result List Link By My Target Creator" library="VedioListMain">
+<tags>
+<tag>Check</tag>
+</tags>
 <kw name="Get WebElement" library="SeleniumLibrary">
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
 <arguments>
@@ -212,8 +218,8 @@
 <assign>
 <var>${first_ResultListLink_elem_p}</var>
 </assign>
-<msg timestamp="20201116 12:28:21.987" level="INFO">${first_ResultListLink_elem_p} = &lt;selenium.webdriver.remote.webelement.WebElement (session="09ff0701a6f6334db333875bb29277ae", element="089b8a9c-d640-4cc1-84f7-038fa6af776c")&gt;</msg>
-<status status="PASS" starttime="20201116 12:28:21.977" endtime="20201116 12:28:21.987"></status>
+<msg timestamp="20201117 01:01:11.924" level="INFO">${first_ResultListLink_elem_p} = &lt;selenium.webdriver.remote.webelement.WebElement (session="7d7c16a9cc9dfc50ac2631e60d641322", element="0c320cb2-1561-4516-b8e5-c3a1b78f6be4")&gt;</msg>
+<status status="PASS" starttime="20201117 01:01:11.914" endtime="20201117 01:01:11.924"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -224,121 +230,66 @@
 <arg>Scroll up three times list then Assign robot Id To Result List Link Element</arg>
 </arguments>
 <kw name="Scroll up three times list then Assign robot Id To Result List Link Element" library="VedioListMain">
+<tags>
+<tag>Action</tag>
+</tags>
 <kw name="Scroll up list function" library="VedioListMain">
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>3s</arg>
 </arguments>
-<msg timestamp="20201116 12:28:25.001" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20201116 12:28:21.999" endtime="20201116 12:28:25.001"></status>
+<msg timestamp="20201117 01:01:14.938" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20201117 01:01:11.936" endtime="20201117 01:01:14.938"></status>
 </kw>
 <kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is enabled.</doc>
 <arguments>
 <arg>${VedioListMain_ResultListLink}:last-child</arg>
-<arg>5s</arg>
-</arguments>
-<status status="PASS" starttime="20201116 12:28:25.001" endtime="20201116 12:28:25.026"></status>
-</kw>
-<kw name="Scroll Element Into View" library="SeleniumLibrary">
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<arguments>
-<arg>${VedioListMain_ResultListLink}:last-child</arg>
-</arguments>
-<status status="PASS" starttime="20201116 12:28:25.026" endtime="20201116 12:28:25.344"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${VedioListMain_ResultListLink}:last-child</arg>
-<arg>5s</arg>
-</arguments>
-<status status="PASS" starttime="20201116 12:28:25.344" endtime="20201116 12:28:25.367"></status>
-</kw>
-<kw name="Mouse Down" library="SeleniumLibrary">
-<doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
-<arguments>
-<arg>${VedioListMain_ResultListLink}:last-child</arg>
-</arguments>
-<msg timestamp="20201116 12:28:25.367" level="INFO">Simulating Mouse Down on element 'css=.result-list a:last-child'.</msg>
-<status status="PASS" starttime="20201116 12:28:25.367" endtime="20201116 12:28:25.727"></status>
-</kw>
-<kw name="Mouse Over" library="SeleniumLibrary">
-<doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<arguments>
-<arg>${VedioListMain_ResultListLink}:nth-last-child(7)</arg>
-</arguments>
-<msg timestamp="20201116 12:28:25.727" level="INFO">Simulating Mouse Over on element 'css=.result-list a:nth-last-child(7)'.</msg>
-<status status="PASS" starttime="20201116 12:28:25.727" endtime="20201116 12:28:26.054"></status>
-</kw>
-<kw name="Mouse Out" library="SeleniumLibrary">
-<doc>Simulates moving the mouse away from the element ``locator``.</doc>
-<arguments>
-<arg>${VedioListMain_ResultListLink}:nth-last-child(7)</arg>
-</arguments>
-<msg timestamp="20201116 12:28:26.054" level="INFO">Simulating Mouse Out on element 'css=.result-list a:nth-last-child(7)'.</msg>
-<status status="PASS" starttime="20201116 12:28:26.054" endtime="20201116 12:28:26.669"></status>
-</kw>
-<status status="PASS" starttime="20201116 12:28:21.999" endtime="20201116 12:28:26.670"></status>
-</kw>
-<kw name="Scroll up list function" library="VedioListMain">
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
 <arg>3s</arg>
 </arguments>
-<msg timestamp="20201116 12:28:29.673" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20201116 12:28:26.671" endtime="20201116 12:28:29.673"></status>
-</kw>
-<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<arguments>
-<arg>${VedioListMain_ResultListLink}:last-child</arg>
-<arg>5s</arg>
-</arguments>
-<status status="PASS" starttime="20201116 12:28:29.673" endtime="20201116 12:28:29.696"></status>
+<status status="PASS" starttime="20201117 01:01:14.938" endtime="20201117 01:01:14.990"></status>
 </kw>
 <kw name="Scroll Element Into View" library="SeleniumLibrary">
 <doc>Scrolls the element identified by ``locator`` into view.</doc>
 <arguments>
 <arg>${VedioListMain_ResultListLink}:last-child</arg>
 </arguments>
-<status status="PASS" starttime="20201116 12:28:29.696" endtime="20201116 12:28:30.016"></status>
+<status status="PASS" starttime="20201117 01:01:14.990" endtime="20201117 01:01:15.315"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
 <arguments>
 <arg>${VedioListMain_ResultListLink}:last-child</arg>
-<arg>5s</arg>
+<arg>3s</arg>
 </arguments>
-<status status="PASS" starttime="20201116 12:28:30.016" endtime="20201116 12:28:30.033"></status>
+<status status="PASS" starttime="20201117 01:01:15.316" endtime="20201117 01:01:15.367"></status>
 </kw>
 <kw name="Mouse Down" library="SeleniumLibrary">
 <doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
 <arguments>
 <arg>${VedioListMain_ResultListLink}:last-child</arg>
 </arguments>
-<msg timestamp="20201116 12:28:30.033" level="INFO">Simulating Mouse Down on element 'css=.result-list a:last-child'.</msg>
-<status status="PASS" starttime="20201116 12:28:30.033" endtime="20201116 12:28:30.397"></status>
+<msg timestamp="20201117 01:01:15.367" level="INFO">Simulating Mouse Down on element 'css=.result-list a:last-child'.</msg>
+<status status="PASS" starttime="20201117 01:01:15.367" endtime="20201117 01:01:15.724"></status>
 </kw>
 <kw name="Mouse Over" library="SeleniumLibrary">
 <doc>Simulates hovering the mouse over the element ``locator``.</doc>
 <arguments>
 <arg>${VedioListMain_ResultListLink}:nth-last-child(7)</arg>
 </arguments>
-<msg timestamp="20201116 12:28:30.398" level="INFO">Simulating Mouse Over on element 'css=.result-list a:nth-last-child(7)'.</msg>
-<status status="PASS" starttime="20201116 12:28:30.397" endtime="20201116 12:28:30.712"></status>
+<msg timestamp="20201117 01:01:15.725" level="INFO">Simulating Mouse Over on element 'css=.result-list a:nth-last-child(7)'.</msg>
+<status status="PASS" starttime="20201117 01:01:15.724" endtime="20201117 01:01:16.051"></status>
 </kw>
 <kw name="Mouse Out" library="SeleniumLibrary">
 <doc>Simulates moving the mouse away from the element ``locator``.</doc>
 <arguments>
 <arg>${VedioListMain_ResultListLink}:nth-last-child(7)</arg>
 </arguments>
-<msg timestamp="20201116 12:28:30.713" level="INFO">Simulating Mouse Out on element 'css=.result-list a:nth-last-child(7)'.</msg>
-<status status="PASS" starttime="20201116 12:28:30.712" endtime="20201116 12:28:31.318"></status>
+<msg timestamp="20201117 01:01:16.052" level="INFO">Simulating Mouse Out on element 'css=.result-list a:nth-last-child(7)'.</msg>
+<status status="PASS" starttime="20201117 01:01:16.052" endtime="20201117 01:01:16.679"></status>
 </kw>
-<status status="PASS" starttime="20201116 12:28:26.670" endtime="20201116 12:28:31.318"></status>
+<status status="PASS" starttime="20201117 01:01:11.936" endtime="20201117 01:01:16.679"></status>
 </kw>
 <kw name="Scroll up list function" library="VedioListMain">
 <kw name="Sleep" library="BuiltIn">
@@ -346,72 +297,130 @@
 <arguments>
 <arg>3s</arg>
 </arguments>
-<msg timestamp="20201116 12:28:34.320" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20201116 12:28:31.319" endtime="20201116 12:28:34.320"></status>
+<msg timestamp="20201117 01:01:19.681" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20201117 01:01:16.680" endtime="20201117 01:01:19.681"></status>
 </kw>
 <kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is enabled.</doc>
 <arguments>
 <arg>${VedioListMain_ResultListLink}:last-child</arg>
-<arg>5s</arg>
+<arg>3s</arg>
 </arguments>
-<status status="PASS" starttime="20201116 12:28:34.320" endtime="20201116 12:28:34.345"></status>
+<status status="PASS" starttime="20201117 01:01:19.682" endtime="20201117 01:01:19.732"></status>
 </kw>
 <kw name="Scroll Element Into View" library="SeleniumLibrary">
 <doc>Scrolls the element identified by ``locator`` into view.</doc>
 <arguments>
 <arg>${VedioListMain_ResultListLink}:last-child</arg>
 </arguments>
-<status status="PASS" starttime="20201116 12:28:34.345" endtime="20201116 12:28:34.662"></status>
+<status status="PASS" starttime="20201117 01:01:19.732" endtime="20201117 01:01:20.061"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
 <arguments>
 <arg>${VedioListMain_ResultListLink}:last-child</arg>
-<arg>5s</arg>
+<arg>3s</arg>
 </arguments>
-<status status="PASS" starttime="20201116 12:28:34.662" endtime="20201116 12:28:34.708"></status>
+<status status="PASS" starttime="20201117 01:01:20.062" endtime="20201117 01:01:20.095"></status>
 </kw>
 <kw name="Mouse Down" library="SeleniumLibrary">
 <doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
 <arguments>
 <arg>${VedioListMain_ResultListLink}:last-child</arg>
 </arguments>
-<msg timestamp="20201116 12:28:34.709" level="INFO">Simulating Mouse Down on element 'css=.result-list a:last-child'.</msg>
-<status status="PASS" starttime="20201116 12:28:34.709" endtime="20201116 12:28:35.088"></status>
+<msg timestamp="20201117 01:01:20.096" level="INFO">Simulating Mouse Down on element 'css=.result-list a:last-child'.</msg>
+<status status="PASS" starttime="20201117 01:01:20.095" endtime="20201117 01:01:20.459"></status>
 </kw>
 <kw name="Mouse Over" library="SeleniumLibrary">
 <doc>Simulates hovering the mouse over the element ``locator``.</doc>
 <arguments>
 <arg>${VedioListMain_ResultListLink}:nth-last-child(7)</arg>
 </arguments>
-<msg timestamp="20201116 12:28:35.088" level="INFO">Simulating Mouse Over on element 'css=.result-list a:nth-last-child(7)'.</msg>
-<status status="PASS" starttime="20201116 12:28:35.088" endtime="20201116 12:28:35.395"></status>
+<msg timestamp="20201117 01:01:20.460" level="INFO">Simulating Mouse Over on element 'css=.result-list a:nth-last-child(7)'.</msg>
+<status status="PASS" starttime="20201117 01:01:20.459" endtime="20201117 01:01:20.767"></status>
 </kw>
 <kw name="Mouse Out" library="SeleniumLibrary">
 <doc>Simulates moving the mouse away from the element ``locator``.</doc>
 <arguments>
 <arg>${VedioListMain_ResultListLink}:nth-last-child(7)</arg>
 </arguments>
-<msg timestamp="20201116 12:28:35.396" level="INFO">Simulating Mouse Out on element 'css=.result-list a:nth-last-child(7)'.</msg>
-<status status="PASS" starttime="20201116 12:28:35.395" endtime="20201116 12:28:36.003"></status>
+<msg timestamp="20201117 01:01:20.769" level="INFO">Simulating Mouse Out on element 'css=.result-list a:nth-last-child(7)'.</msg>
+<status status="PASS" starttime="20201117 01:01:20.768" endtime="20201117 01:01:21.400"></status>
 </kw>
-<status status="PASS" starttime="20201116 12:28:31.319" endtime="20201116 12:28:36.004"></status>
+<status status="PASS" starttime="20201117 01:01:16.679" endtime="20201117 01:01:21.400"></status>
+</kw>
+<kw name="Scroll up list function" library="VedioListMain">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20201117 01:01:24.403" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20201117 01:01:21.403" endtime="20201117 01:01:24.403"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${VedioListMain_ResultListLink}:last-child</arg>
+<arg>3s</arg>
+</arguments>
+<status status="PASS" starttime="20201117 01:01:24.404" endtime="20201117 01:01:24.444"></status>
 </kw>
 <kw name="Scroll Element Into View" library="SeleniumLibrary">
 <doc>Scrolls the element identified by ``locator`` into view.</doc>
 <arguments>
 <arg>${VedioListMain_ResultListLink}:last-child</arg>
 </arguments>
-<status status="PASS" starttime="20201116 12:28:36.004" endtime="20201116 12:28:36.354"></status>
+<status status="PASS" starttime="20201117 01:01:24.444" endtime="20201117 01:01:24.774"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
 <arguments>
 <arg>${VedioListMain_ResultListLink}:last-child</arg>
-<arg>5s</arg>
+<arg>3s</arg>
 </arguments>
-<status status="PASS" starttime="20201116 12:28:36.354" endtime="20201116 12:28:36.388"></status>
+<status status="PASS" starttime="20201117 01:01:24.774" endtime="20201117 01:01:24.804"></status>
+</kw>
+<kw name="Mouse Down" library="SeleniumLibrary">
+<doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
+<arguments>
+<arg>${VedioListMain_ResultListLink}:last-child</arg>
+</arguments>
+<msg timestamp="20201117 01:01:24.805" level="INFO">Simulating Mouse Down on element 'css=.result-list a:last-child'.</msg>
+<status status="PASS" starttime="20201117 01:01:24.805" endtime="20201117 01:01:25.174"></status>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${VedioListMain_ResultListLink}:nth-last-child(7)</arg>
+</arguments>
+<msg timestamp="20201117 01:01:25.175" level="INFO">Simulating Mouse Over on element 'css=.result-list a:nth-last-child(7)'.</msg>
+<status status="PASS" starttime="20201117 01:01:25.174" endtime="20201117 01:01:25.486"></status>
+</kw>
+<kw name="Mouse Out" library="SeleniumLibrary">
+<doc>Simulates moving the mouse away from the element ``locator``.</doc>
+<arguments>
+<arg>${VedioListMain_ResultListLink}:nth-last-child(7)</arg>
+</arguments>
+<msg timestamp="20201117 01:01:25.487" level="INFO">Simulating Mouse Out on element 'css=.result-list a:nth-last-child(7)'.</msg>
+<status status="PASS" starttime="20201117 01:01:25.487" endtime="20201117 01:01:26.135"></status>
+</kw>
+<status status="PASS" starttime="20201117 01:01:21.401" endtime="20201117 01:01:26.136"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${VedioListMain_ResultListLink}:last-child</arg>
+</arguments>
+<status status="PASS" starttime="20201117 01:01:26.136" endtime="20201117 01:01:26.480"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${VedioListMain_ResultListLink}:last-child</arg>
+<arg>3s</arg>
+</arguments>
+<status status="PASS" starttime="20201117 01:01:26.481" endtime="20201117 01:01:26.517"></status>
 </kw>
 <kw name="Get WebElement" library="SeleniumLibrary">
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
@@ -421,8 +430,8 @@
 <assign>
 <var>${last_ResultListLink_elem}</var>
 </assign>
-<msg timestamp="20201116 12:28:36.410" level="INFO">${last_ResultListLink_elem} = &lt;selenium.webdriver.remote.webelement.WebElement (session="09ff0701a6f6334db333875bb29277ae", element="2060d921-ff8e-442a-bc99-060cfd5ea690")&gt;</msg>
-<status status="PASS" starttime="20201116 12:28:36.388" endtime="20201116 12:28:36.410"></status>
+<msg timestamp="20201117 01:01:26.533" level="INFO">${last_ResultListLink_elem} = &lt;selenium.webdriver.remote.webelement.WebElement (session="7d7c16a9cc9dfc50ac2631e60d641322", element="cbdb6ce2-2285-4901-bf3e-2878d1a6c06e")&gt;</msg>
+<status status="PASS" starttime="20201117 01:01:26.518" endtime="20201117 01:01:26.533"></status>
 </kw>
 <kw name="Assign Id To Element" library="SeleniumLibrary">
 <doc>Assigns a temporary ``id`` to the element specified by ``locator``.</doc>
@@ -430,8 +439,8 @@
 <arg>${last_ResultListLink_elem}</arg>
 <arg>robot-last_link</arg>
 </arguments>
-<msg timestamp="20201116 12:28:36.411" level="INFO">Assigning temporary id 'robot-last_link' to element '&lt;selenium.webdriver.remote.webelement.WebElement (session="09ff0701a6f6334db333875bb29277ae", element="2060d921-ff8e-442a-bc99-060cfd5ea690")&gt;'.</msg>
-<status status="PASS" starttime="20201116 12:28:36.410" endtime="20201116 12:28:36.418"></status>
+<msg timestamp="20201117 01:01:26.534" level="INFO">Assigning temporary id 'robot-last_link' to element '&lt;selenium.webdriver.remote.webelement.WebElement (session="7d7c16a9cc9dfc50ac2631e60d641322", element="cbdb6ce2-2285-4901-bf3e-2878d1a6c06e")&gt;'.</msg>
+<status status="PASS" starttime="20201117 01:01:26.533" endtime="20201117 01:01:26.541"></status>
 </kw>
 <kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
 <doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
@@ -440,10 +449,13 @@
 <arg>id</arg>
 <arg>robot-last_link</arg>
 </arguments>
-<msg timestamp="20201116 12:28:36.426" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="09ff0701a6f6334db333875bb29277ae", element="2060d921-ff8e-442a-bc99-060cfd5ea690")&gt;' attribute 'id' contains value 'robot-last_link'.</msg>
-<status status="PASS" starttime="20201116 12:28:36.418" endtime="20201116 12:28:36.427"></status>
+<msg timestamp="20201117 01:01:26.550" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="7d7c16a9cc9dfc50ac2631e60d641322", element="cbdb6ce2-2285-4901-bf3e-2878d1a6c06e")&gt;' attribute 'id' contains value 'robot-last_link'.</msg>
+<status status="PASS" starttime="20201117 01:01:26.541" endtime="20201117 01:01:26.551"></status>
 </kw>
 <kw name="Go to Select Movie" library="VedioListMain">
+<tags>
+<tag>Action</tag>
+</tags>
 <arguments>
 <arg>robot-last_link</arg>
 </arguments>
@@ -452,27 +464,30 @@
 <arguments>
 <arg>id=${robot_id}</arg>
 </arguments>
-<msg timestamp="20201116 12:28:36.428" level="INFO">Clicking link 'id=robot-last_link'.</msg>
-<status status="PASS" starttime="20201116 12:28:36.427" endtime="20201116 12:28:36.565"></status>
+<msg timestamp="20201117 01:01:26.552" level="INFO">Clicking link 'id=robot-last_link'.</msg>
+<status status="PASS" starttime="20201117 01:01:26.551" endtime="20201117 01:01:26.677"></status>
 </kw>
-<status status="PASS" starttime="20201116 12:28:36.427" endtime="20201116 12:28:36.565"></status>
+<status status="PASS" starttime="20201117 01:01:26.551" endtime="20201117 01:01:26.678"></status>
 </kw>
-<status status="PASS" starttime="20201116 12:28:21.999" endtime="20201116 12:28:36.565"></status>
+<status status="PASS" starttime="20201117 01:01:11.936" endtime="20201117 01:01:26.678"></status>
 </kw>
-<status status="PASS" starttime="20201116 12:28:21.987" endtime="20201116 12:28:36.565"></status>
+<status status="PASS" starttime="20201117 01:01:11.924" endtime="20201117 01:01:26.679"></status>
 </kw>
-<status status="PASS" starttime="20201116 12:28:21.977" endtime="20201116 12:28:36.565"></status>
+<status status="PASS" starttime="20201117 01:01:11.914" endtime="20201117 01:01:26.679"></status>
 </kw>
-<status status="PASS" starttime="20201116 12:28:19.956" endtime="20201116 12:28:36.565"></status>
+<status status="PASS" starttime="20201117 01:01:10.026" endtime="20201117 01:01:26.680"></status>
 </kw>
 <kw name="Then go to select movie and play" library="TwitchPhoneWeb">
 <kw name="Check movie is absolute or not" library="PlayMovie">
+<tags>
+<tag>Check</tag>
+</tags>
 <kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is enabled.</doc>
 <arguments>
 <arg>${PlayMovie_Watching}</arg>
 </arguments>
-<status status="PASS" starttime="20201116 12:28:36.567" endtime="20201116 12:28:39.129"></status>
+<status status="PASS" starttime="20201117 01:01:26.683" endtime="20201117 01:01:28.461"></status>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <doc>Returns the text value of the element identified by ``locator``.</doc>
@@ -482,8 +497,8 @@
 <assign>
 <var>${overlay}</var>
 </assign>
-<msg timestamp="20201116 12:28:39.149" level="INFO">${overlay} = 點擊取消靜音</msg>
-<status status="PASS" starttime="20201116 12:28:39.130" endtime="20201116 12:28:39.149"></status>
+<msg timestamp="20201117 01:01:28.480" level="INFO">${overlay} = 點擊取消靜音</msg>
+<status status="PASS" starttime="20201117 01:01:28.461" endtime="20201117 01:01:28.480"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -491,45 +506,131 @@
 <arg>'${overlay}' == '實況主表示該影片僅適合成人觀看。'</arg>
 <arg>Play primary movie</arg>
 </arguments>
-<status status="PASS" starttime="20201116 12:28:39.149" endtime="20201116 12:28:39.150"></status>
+<status status="PASS" starttime="20201117 01:01:28.480" endtime="20201117 01:01:28.481"></status>
 </kw>
-<status status="PASS" starttime="20201116 12:28:36.567" endtime="20201116 12:28:39.150"></status>
+<status status="PASS" starttime="20201117 01:01:26.682" endtime="20201117 01:01:28.481"></status>
 </kw>
-<kw name="Check the video" library="PlayMovie">
-<kw name="Get WebElement" library="SeleniumLibrary">
-<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<kw name="Check The Video is Ready" library="PlayMovie">
+<kw name="${i} IN RANGE [ 999999 ]" type="for">
+<kw name="${i} = 0" type="foritem">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
 <arguments>
-<arg>css=.tw-border-t .tw-stat__value</arg>
+<arg>${return_readyState}</arg>
 </arguments>
 <assign>
-<var>${video}</var>
+<var>${Video_readyState}</var>
 </assign>
-<msg timestamp="20201116 12:28:39.164" level="INFO">${video} = &lt;selenium.webdriver.remote.webelement.WebElement (session="09ff0701a6f6334db333875bb29277ae", element="a0a19666-fd1b-47f4-8ea0-24b8bada0398")&gt;</msg>
-<status status="PASS" starttime="20201116 12:28:39.150" endtime="20201116 12:28:39.164"></status>
+<msg timestamp="20201117 01:01:28.537" level="INFO">Executing JavaScript:
+return document.getElementsByTagName("video")[0].readyState;
+Without any arguments.</msg>
+<msg timestamp="20201117 01:01:28.542" level="INFO">${Video_readyState} = 4</msg>
+<status status="PASS" starttime="20201117 01:01:28.536" endtime="20201117 01:01:28.542"></status>
 </kw>
-<status status="PASS" starttime="20201116 12:28:39.150" endtime="20201116 12:28:39.164"></status>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>${Video_readyState} == 4</arg>
+</arguments>
+<assign>
+<var>${VideoIsReady}</var>
+</assign>
+<msg timestamp="20201117 01:01:28.542" level="INFO">${VideoIsReady} = True</msg>
+<status status="PASS" starttime="20201117 01:01:28.542" endtime="20201117 01:01:28.543"></status>
 </kw>
-<kw name="After play 5s Capture" library="PlayMovie">
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>${VideoIsReady}</arg>
+</arguments>
+<msg timestamp="20201117 01:01:28.543" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20201117 01:01:28.543" endtime="20201117 01:01:28.543"></status>
+</kw>
+<status status="PASS" starttime="20201117 01:01:28.536" endtime="20201117 01:01:28.543"></status>
+</kw>
+<status status="PASS" starttime="20201117 01:01:28.481" endtime="20201117 01:01:28.559"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Check The Video is Ready</arg>
+</arguments>
+<msg timestamp="20201117 01:01:28.559" level="INFO">Check The Video is Ready</msg>
+<status status="PASS" starttime="20201117 01:01:28.559" endtime="20201117 01:01:28.559"></status>
+</kw>
+<status status="PASS" starttime="20201117 01:01:28.481" endtime="20201117 01:01:28.560"></status>
+</kw>
+<kw name="After play 5s check Video currentTime is 5s and Capture" library="PlayMovie">
+<tags>
+<tag>Check</tag>
+</tags>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20201117 01:01:33.560" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20201117 01:01:28.560" endtime="20201117 01:01:33.560"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>${return_currentTime}</arg>
+</arguments>
+<assign>
+<var>${Video_currentTime}</var>
+</assign>
+<msg timestamp="20201117 01:01:33.561" level="INFO">Executing JavaScript:
+return document.getElementsByTagName("video")[0].currentTime;
+Without any arguments.</msg>
+<msg timestamp="20201117 01:01:33.569" level="INFO">${Video_currentTime} = 5.171577</msg>
+<status status="PASS" starttime="20201117 01:01:33.560" endtime="20201117 01:01:33.569"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${Video_currentTime}</arg>
+</arguments>
+<assign>
+<var>${Video_currentTime_int}</var>
+</assign>
+<msg timestamp="20201117 01:01:33.570" level="INFO">${Video_currentTime_int} = 5</msg>
+<status status="PASS" starttime="20201117 01:01:33.570" endtime="20201117 01:01:33.571"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${Video_currentTime_int} &gt;= 5</arg>
+</arguments>
+<status status="PASS" starttime="20201117 01:01:33.571" endtime="20201117 01:01:33.572"></status>
+</kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
 <arguments>
 <arg>${OUTPUTDIR}/AfterPlay5sCapture.png</arg>
 </arguments>
-<msg timestamp="20201116 12:28:40.265" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="AfterPlay5sCapture.png"&gt;&lt;img src="AfterPlay5sCapture.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20201116 12:28:39.165" endtime="20201116 12:28:40.265"></status>
+<msg timestamp="20201117 01:01:34.402" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="AfterPlay5sCapture.png"&gt;&lt;img src="AfterPlay5sCapture.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201117 01:01:33.572" endtime="20201117 01:01:34.402"></status>
 </kw>
-<status status="PASS" starttime="20201116 12:28:39.164" endtime="20201116 12:28:40.265"></status>
+<status status="PASS" starttime="20201117 01:01:28.560" endtime="20201117 01:01:34.402"></status>
 </kw>
-<status status="PASS" starttime="20201116 12:28:36.566" endtime="20201116 12:28:40.265"></status>
+<status status="PASS" starttime="20201117 01:01:26.681" endtime="20201117 01:01:34.402"></status>
+</kw>
+<kw name="End Test" library="TwitchPhoneWeb" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201117 01:01:34.404" endtime="20201117 01:01:36.605"></status>
+</kw>
+<status status="PASS" starttime="20201117 01:01:34.404" endtime="20201117 01:01:36.606"></status>
 </kw>
 <doc>As a mobile phone user. Users preview Twitch with a browser. Users can enter text from the search box, and then look for the author's video from the resulting past video.</doc>
 <tags>
 <tag>Major</tag>
 </tags>
-<status status="PASS" starttime="20201116 12:28:13.321" endtime="20201116 12:28:40.266" critical="yes"></status>
+<status status="PASS" starttime="20201117 01:01:02.794" endtime="20201117 01:01:36.608" critical="yes"></status>
 </test>
 <doc>This is some basic info about the whole suite</doc>
-<status status="PASS" starttime="20201116 12:28:13.039" endtime="20201116 12:28:40.272"></status>
+<status status="PASS" starttime="20201117 01:01:02.545" endtime="20201117 01:01:36.624"></status>
 </suite>
 <statistics>
 <total>

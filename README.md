@@ -1,6 +1,9 @@
-#  Robottestcase-Twitch
+#  Robot Testcase - Twitch
 ------------
-POM
+Page Object Model (POM) | Design Pattern
+
+Terminal to execute:
+ robot -d {results_path} tests\Twitch.robot
 
 ### Test Cases  With GherkinTest Cases  With Gherkin
 	Given the user use phone to open the browser
@@ -12,9 +15,10 @@ POM
 ------------
 
 **Environmental Requirements:**
+- Browser: Chrome, Chromedriver
 - python: 3.8
-- robot framework: 3
-- seleniumlibrary: 4.5
+- Robot Framework: 3.2.2
+- Seleniumlibrary: 4.5
 
 ------------
 

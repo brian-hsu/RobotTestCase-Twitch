@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation  This is some basic info about the whole suite
 Resource  ../Resurces/TwitchPhoneWeb.robot
-# Test Teardown  End Test
+Test Teardown  End Test
 
 
 *** Variables ***

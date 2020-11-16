@@ -41,8 +41,8 @@ check My Target Creator or scroll three list And go to movie
 
 go to select movie and play
   PlayMovie.Check movie is absolute or not
-  PlayMovie.Check the video
-  PlayMovie.After play 5s Capture
+  PlayMovie.Check The Video is Ready
+  PlayMovie.After play 5s check Video currentTime is 5s and Capture
 
 End Test
   Close Browser
