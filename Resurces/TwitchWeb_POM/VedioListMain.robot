@@ -1,40 +1,46 @@
 *** Settings ***
 Library  SeleniumLibrary
-Library  OperatingSystem
 
 
 *** Variables ***
-${VedioListMain_InteracTable_last} =  css=a.tw-interactable:last-child
-${OUTPUTDIR} =  ../../Results
-${VedioListMain_ResultViews} =  css=a.tw-interactable
-${int} =  1
+${VedioListMain_BackResultLink} =  css=[href*='/search?term']
+${VedioListMain_ResultListLink} =  css=.result-list a
+
 
 *** Keywords ***
-Wait Page Contains Elment of Region About Vedio
-  Wait Until Element Is Visible  ${VedioListMain_ResultViews}
-  Capture Page Screenshot  ${OUTPUTDIR}/RegionAboutVedio.png
+Wait Page Contains Elment of Result Views
+  Wait Until Element Is Visible  ${VedioListMain_BackResultLink}  5s
 
-Scroll Element Into View test
-  Scroll Element Into View  ${VedioListMain_InteracTable_last}
-  Wait Until Element Is Visible  ${VedioListMain_InteracTable_last}
+Assign robot first link Id To Result List Link Element
+  ${first_ResultListLink_elem} =  Get WebElement  ${VedioListMain_ResultListLink}:first-child
+  Assign Id To Element  ${first_ResultListLink_elem}  robot-first_link
+  Element Attribute Value Should Be  ${first_ResultListLink_elem}  id  robot-first_link
+  Go to Select Movie  robot-first_link
 
-  ${Resultlist_count} =	Get Element Count	${VedioListMain_ResultViews}
-  log  ${Resultlist_count} 
-  
-  Capture Page Screenshot  ${OUTPUTDIR}/ScrollElementIntoView.png
+Check First Result List Link By My Target Creator
+  ${first_ResultListLink_elem_p} =  Get WebElement  ${VedioListMain_ResultListLink}:first-child p
+  Run Keyword If  '${first_ResultListLink_elem_p.text}' == '${MY_TARGET_NAME}'  Assign robot first link Id To Result List Link Element  ELSE  Scroll up three times list then Assign robot Id To Result List Link Element
 
+Scroll up list function
+  sleep  3s
+  Wait Until Element Is Enabled  ${VedioListMain_ResultListLink}:last-child  5s
+  Scroll Element Into View  ${VedioListMain_ResultListLink}:last-child
+  Wait Until Element Is Visible  ${VedioListMain_ResultListLink}:last-child  5s
+  Mouse Down  ${VedioListMain_ResultListLink}:last-child
+  Mouse Over  ${VedioListMain_ResultListLink}:nth-last-child(7)
+  Mouse Out  ${VedioListMain_ResultListLink}:nth-last-child(7)
 
+Scroll up three times list then Assign robot Id To Result List Link Element
+  Scroll up list function
+  Scroll up list function
+  Scroll up list function
+  Scroll Element Into View  ${VedioListMain_ResultListLink}:last-child
+  Wait Until Element Is Visible  ${VedioListMain_ResultListLink}:last-child  5s
+  ${last_ResultListLink_elem} =  Get WebElement  ${VedioListMain_ResultListLink}:nth-last-child(3)
+  Assign Id To Element  ${last_ResultListLink_elem}  robot-last_link
+  Element Attribute Value Should Be  ${last_ResultListLink_elem}  id  robot-last_link
+  Go to Select Movie  robot-last_link
 
-# Scroll Element Into View test
-#   FOR  ${i}  IN RANGE  999999
-#   Scroll Element Into View  ${VedioListMain_InteracTable_last}
-#   Wait Until Element Is Visible  ${VedioListMain_InteracTable_last}
-
-#   ${Resultlist_count} =	Get Element Count	${VedioListMain_ResultViews}
-#   log  ${Resultlist_count} 
-#   Exit For Loop If  ${Resultlist_count} == 18
-#   Log  ${i}
-#   END
-#   Log  Exited
-  
-#   Capture Page Screenshot  ${OUTPUTDIR}/ScrollElementIntoView.png
+Go to Select Movie
+  [Arguments]  ${robot_id}
+  Click Link  id=${robot_id}

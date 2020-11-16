@@ -4,10 +4,13 @@ Resource  ./TwitchWeb_POM/HomePageMain.robot
 Resource  ./TwitchWeb_POM/HomePageNav.robot
 Resource  ./TwitchWeb_POM/SearchResultMain.robot
 Resource  ./TwitchWeb_POM/VedioListMain.robot
+Resource  ./TwitchWeb_POM/PlayMovie.robot
+
 
 *** Variables ***
 ${DEVICE_NAME} =  Pixel 2 XL  # arg: [mobile device name] like: Pixel 2 XL, iPhone 6/7/8
 ${LANDINGPAGE_NAVIGATE_SITE} =  https://www.twitch.tv/
+
 
 *** Keywords ***
 the user use phone to open the browser
@@ -30,13 +33,16 @@ the user type "Monster Hunter World" from the search bar
 press the search button
   HomePageNav.Click Search Button Show SearchResult
 
-find the first film from the resulting film by "CervelloneRe"
+check My Target Creator or scroll three list And go to movie
   SearchResultMain.Wait Page Contains Elment of Region About Vedio
   SearchResultMain.Click Vedio Details Link
-    
-  VedioListMain.Wait Page Contains Elment of Region About Vedio
-  VedioListMain.Scroll Element Into View test
+  VedioListMain.Wait Page Contains Elment of Result Views
+  VedioListMain.Check First Result List Link By My Target Creator
 
+go to select movie and play
+  PlayMovie.Check movie is absolute or not
+  PlayMovie.Check the video
+  PlayMovie.After play 5s Capture
 
 End Test
   Close Browser

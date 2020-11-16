@@ -1,11 +1,13 @@
 *** Settings ***
 Documentation  This is some basic info about the whole suite
 Resource  ../Resurces/TwitchPhoneWeb.robot
-Test Teardown  End Test
+# Test Teardown  End Test
 
 
 *** Variables ***
 ${HOMEPAGENAV_SEARCHTEXT} =  Monster Hunter World
+${MY_TARGET_NAME} =  CervelloneRe
+${OUTPUTDIR} =  ../../Results
 
 
 *** Test Cases ***
@@ -17,4 +19,5 @@ Verify that the Twitch platform can play the author's video
   Given the user go to twitch home page
   When the user type "Monster Hunter World" from the search bar
   And press the search button
-  And find the first film from the resulting film by "CervelloneRe"
+  And check My Target Creator or scroll three list And go to movie
+  Then go to select movie and play
