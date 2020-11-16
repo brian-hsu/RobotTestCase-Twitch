@@ -5,7 +5,7 @@ Page Object Model (POM) | Design Pattern
 Terminal to execute:
  robot -d {results_path} tests\Twitch.robot
 
-### Test Cases  With GherkinTest Cases  With Gherkin
+### Test Cases With Gherkin
 	Given the user use phone to open the browser
 	Given the user go to twitch home page
 	When the user type "Monster Hunter World" from the search bar
